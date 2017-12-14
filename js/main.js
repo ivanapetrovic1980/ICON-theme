@@ -92,13 +92,13 @@ $(document).ready(function () {
     }
 
     $('.example-fontawesome-o').each(function () {
-        var currentRating = $('#example-fontawesome-o').data('current-rating');
+        var currentRating = $(this).data('current-rating');
 
-        $('.stars-example-fontawesome-o .current-rating')
+        $(this).find('.current-rating')
                 .find('span')
                 .html(currentRating);
 
-        $('.stars-example-fontawesome-o .clear-rating').on('click', function (event) {
+        $(this).find('.clear-rating').on('click', function (event) {
             event.preventDefault();
 
             $(this)
@@ -116,17 +116,17 @@ $(document).ready(function () {
                     $(this)
                             .barrating('clear');
                 } else {
-                    $('.stars-example-fontawesome-o .current-rating')
+                    $(this).find('.current-rating')
                             .addClass('hidden');
 
-                    $('.stars-example-fontawesome-o .your-rating')
+                    $(this).find(' .your-rating')
                             .removeClass('hidden')
                             .find('span')
                             .html(value);
                 }
             },
             onClear: function (value, text) {
-                $('.stars-example-fontawesome-o')
+                $(this).find('.stars-example-fontawesome-o')
                         .find('.current-rating')
                         .removeClass('hidden')
                         .end()
